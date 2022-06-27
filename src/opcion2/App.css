@@ -1,0 +1,28 @@
+
+
+.app {
+  background-color: #d8dae2;
+  padding: 20px;
+  display: flex;
+  justify-content: space-evenly;
+  flex-direction: column;
+  color: black;
+}
+
+
+.question-section {
+  padding: 20px 0;
+}
+
+.answer-section {
+  padding: 20px 0;;
+}
+
+.button-send {
+  width: fit-content;
+}
+
+.score-section {
+  font-weight: bold;
+  padding: 20px 0;
+}
