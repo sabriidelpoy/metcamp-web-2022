@@ -4,14 +4,14 @@ function CardQuestion({ currentQuestion, handleAnswerOptionClick }) {
   return (
     <div className="question-container">
       <div className="question-section">
-        <div className="question-text">{currentQuestion.questionText}</div>
+        <div className="question-text">{currentQuestion.question}</div>
       </div>
       <div className="answer-section">
-        {currentQuestion.answerOptions.map((answerOption, index) => (
+        {currentQuestion.answers.map((answerOption, index) => (
           <button key={index}
-            onClick={() => handleAnswerOptionClick(answerOption.isCorrect)}
+            onClick={() => handleAnswerOptionClick(answerOption.is_correct)}
           >
-            {answerOption.answerText}
+            {answerOption.answer}
           </button>
         ))}
       </div>

@@ -1,40 +1,22 @@
-import React, { useState } from "react";
-import { questions } from "../questions";
-import CardQuestion from "./CardQuestion";
-import "./App.css";
+import React from "react";
+import {
+  BrowserRouter as Router,
+  Routes,
+  Route
+} from "react-router-dom";
+import {Home} from './Home';
+import {Game} from './Game'
+
+
 export default function App() {
-  const [showScore, setShowScore] = useState(false);
-  const [score, setScore] = useState(0);
-
-  const handleAnswerOptionClick = (isCorrect) => {
-    if (isCorrect) {
-      setScore(score + 1);
-    }
-  };
-
-  const handleScoreClick = () => {
-    setShowScore(score);
-  };
-
   return (
-    <div className="app">
-      <>
-        {questions.map((question, index) => {
-          return (
-            <CardQuestion
-			  key={index}
-              currentQuestion={question}
-              handleAnswerOptionClick={handleAnswerOptionClick}
-            />
-          );
-        })}
-        <button className='button-send' onClick={() => handleScoreClick()}>Enviar</button>
-        {showScore && (
-        <div className="score-section">
-          Tu puntaje es {score} de {questions.length}
-        </div>
-        )}
-      </>
+    <div>
+      <Router>
+        <Routes>
+          <Route path="/" element={<Home />}/>
+          <Route path="/game" element={<Game/>}/>
+        </Routes>
+      </Router>
     </div>
   );
 }
