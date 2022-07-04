@@ -15,6 +15,7 @@ export default function App() {
         <Routes>
           <Route path="/" element={<Home />}/>
           <Route path="/game" element={<Game/>}/>
+          <Route path="/metcamp-web-2022" element={<Home />}/>
         </Routes>
       </Router>
     </div>
