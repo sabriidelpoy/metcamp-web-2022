@@ -1,10 +1,10 @@
 import React, { useState, useEffect } from "react";
-import CardQuestion from "./CardQuestion";
+import CardQuestionRadio from "./CardQuestionRadio";
 import "./Game.css";
 
 export function Game() {
   const [showScore, setShowScore] = useState(false);
-  const [score, setScore] = useState(0);
+  const [score, setScore] = useState([]);
   const [questions, setQuestionsData] = useState([]);
   const [loading, setLoading] = useState(false);
 
@@ -32,16 +32,27 @@ export function Game() {
             */
     })();
   }, []);
-
-  const handleAnswerOptionClick = (isCorrect) => {
-    if (isCorrect) {
-      setScore(score + 1);
-    }
+  
+  const handleAnswerOptionClick = (index, isCorrect) => {
+    const updatedScore = [...score];
+    updatedScore[index-1] = isCorrect ? 1 : 0;
+    console.log(updatedScore);
+    setScore(updatedScore);
   };
 
   const handleScoreClick = () => {
     setShowScore(true);
   };
+
+  const formatScore = () => {
+    let points = 0;
+
+    for (const value of score) {
+      points += value;
+    }
+
+    return points
+  }
 
   return (
     <div className="game">
@@ -49,21 +60,25 @@ export function Game() {
         <div>Loading...</div>
       ) : (
         <div>
-          {questions.map((question, index) => {
-            return (
-              <CardQuestion
-                key={index}
-                currentQuestion={question}
-                handleAnswerOptionClick={handleAnswerOptionClick}
-              />
-            );
-          })}
-          <button className="button-send" onClick={() => handleScoreClick()}>
-            Enviar
-          </button>
+          {!showScore && (
+            <div>
+              {questions.map((question, index) => {
+                return (
+                  <CardQuestionRadio
+                    key={index}
+                    currentQuestion={question}
+                    handleAnswerOptionClick={handleAnswerOptionClick}
+                  />
+                );
+              })}
+              <button className="button-send" onClick={() => handleScoreClick()}>
+                Enviar
+              </button>
+            </div>
+          )}
           {showScore && (
             <div className="score-section">
-              Tu puntaje es {score} de {questions.length}
+              Tu puntaje es {formatScore()} de {questions.length}
             </div>
           )}
         </div>
