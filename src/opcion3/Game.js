@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import CardQuestionRadio from "./CardQuestionRadio";
+import { Button } from "./Button";
 import "./Game.css";
 
 export function Game() {
@@ -16,6 +17,7 @@ export function Game() {
           "https://62bb6e36573ca8f83298fbef.mockapi.io/metcampweb22/v1/questions/harry-potter"
         );
         const data = await response.json();
+        setScore(new Array(data.length).fill(0))
         setQuestionsData(data);
       } catch (error) {
         console.log(error);
@@ -32,7 +34,7 @@ export function Game() {
             */
     })();
   }, []);
-  
+
   const handleAnswerOptionClick = (index, isCorrect) => {
     const updatedScore = [...score];
     updatedScore[index-1] = isCorrect ? 1 : 0;
@@ -57,7 +59,7 @@ export function Game() {
   return (
     <div className="game">
       {loading ? (
-        <div>Loading...</div>
+        <div className="box">Loading...</div>
       ) : (
         <div>
           {!showScore && (
@@ -71,13 +73,12 @@ export function Game() {
                   />
                 );
               })}
-              <button className="button-send" onClick={() => handleScoreClick()}>
-                Enviar
-              </button>
+
+              <Button onClickHandler={() => handleScoreClick()} text="Enviar" />
             </div>
           )}
           {showScore && (
-            <div className="score-section">
+            <div className="score-section box">
               Tu puntaje es {formatScore()} de {questions.length}
             </div>
           )}

@@ -7,6 +7,7 @@ import {
 import {Home} from './Home';
 import {Game} from './Game'
 
+import 'bulma/css/bulma.min.css';
 
 export default function App() {
   return (

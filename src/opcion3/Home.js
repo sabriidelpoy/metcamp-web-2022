@@ -1,10 +1,14 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { Button } from "./Button";
+import { useNavigate } from 'react-router-dom';
 
 export function Home() {
+    const navigate = useNavigate();
+
+    const onClickButton = () => {
+       navigate('/game');
+    } 
     return (
-        <button>
-            <Link to='/game'>Play game</Link>
-        </button>
+        <Button onClickHandler={onClickButton} text="Play" />
     )
 }
