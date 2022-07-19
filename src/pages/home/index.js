@@ -8,7 +8,7 @@ function Home() {
        navigate('/game');
     } 
     return (
-        <Button onClick={onClickButton} text="Play" />
+        <Button onClick={onClickButton} text="Play" classes='is-primary is-large'/>
     )
 }
 

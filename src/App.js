@@ -6,6 +6,8 @@ import {
 import Home from './pages/home';
 import Game from './pages/game';
 
+import 'bulma/css/bulma.min.css';
+
 function App() {
   return (
     <BrowserRouter>
