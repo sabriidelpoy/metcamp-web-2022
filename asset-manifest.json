@@ -1,15 +1,15 @@
 {
   "files": {
     "main.css": "/metcamp-web-2022/static/css/main.3719a6c5.css",
-    "main.js": "/metcamp-web-2022/static/js/main.4f563e89.js",
+    "main.js": "/metcamp-web-2022/static/js/main.19f2cdd4.js",
     "static/js/787.d9b0adfd.chunk.js": "/metcamp-web-2022/static/js/787.d9b0adfd.chunk.js",
     "index.html": "/metcamp-web-2022/index.html",
     "main.3719a6c5.css.map": "/metcamp-web-2022/static/css/main.3719a6c5.css.map",
-    "main.4f563e89.js.map": "/metcamp-web-2022/static/js/main.4f563e89.js.map",
+    "main.19f2cdd4.js.map": "/metcamp-web-2022/static/js/main.19f2cdd4.js.map",
     "787.d9b0adfd.chunk.js.map": "/metcamp-web-2022/static/js/787.d9b0adfd.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.3719a6c5.css",
-    "static/js/main.4f563e89.js"
+    "static/js/main.19f2cdd4.js"
   ]
 }
