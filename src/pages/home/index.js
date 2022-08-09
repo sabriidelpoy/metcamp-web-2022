@@ -8,7 +8,13 @@ function Home() {
        navigate('/game');
     } 
     return (
-        <Button onClick={onClickButton} text="Play" classes='is-primary is-large'/>
+        <section className="hero is-medium is-fullheight">
+            <div className="hero-body">
+                <div className="container has-text-centered">
+                <Button onClick={onClickButton} text="MetCamp Quiz" classes='is-primary is-outlined is-large'/>
+                </div>
+            </div>
+        </section>
     )
 }
 

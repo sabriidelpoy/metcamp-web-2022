@@ -16,18 +16,24 @@ function Game() {
     }, []);
 
     return (
-        <div className="container has-background-primary-light">
+        <div className="container">
             <section className="section">
-                <h1 className="title is-1">El juego</h1>
+                <nav class="breadcrumb" aria-label="breadcrumbs">
+                    <ul>
+                        <li><a href="/">Inicio</a></li>
+                        <li class="is-active"><a href="#" aria-current="page">Preguntas</a></li>
+                    </ul>
+                </nav>
                 {loading ? (
                     <div className="box">Loading...</div>
-                ) : (
+                ) : 
+                (
                     <form>
                         {questions.map((question, index) => {
                             return <QuestionCard key={index} currentQuestion={question} />
                         })}
                     </form>
-                    )
+                )
                 }
             </section>
         </div>
