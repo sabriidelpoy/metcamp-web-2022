@@ -4,7 +4,7 @@ function QuestionCard({ currentQuestion }) {
             <div className="columns">
                 <p className="column is-full">
                     <span className="tag is-rounded is-info">{currentQuestion.id}</span> {currentQuestion.question}
-                    </p>
+                </p>
             </div>
             {currentQuestion.answers.map((answerOption, index) => (
                 <div key={index}>

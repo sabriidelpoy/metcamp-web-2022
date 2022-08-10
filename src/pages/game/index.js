@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import { Link } from 'react-router-dom';
 import QuestionCard from "../../components/QuestionCard";
 
 const API_URL = "https://62bb6e36573ca8f83298fbef.mockapi.io/metcampweb22/v1/questions/harry-potter";
@@ -18,10 +19,10 @@ function Game() {
     return (
         <div className="container">
             <section className="section">
-                <nav class="breadcrumb" aria-label="breadcrumbs">
+                <nav className="breadcrumb" aria-label="breadcrumbs">
                     <ul>
-                        <li><a href="/">Inicio</a></li>
-                        <li class="is-active"><a href="#" aria-current="page">Preguntas</a></li>
+                        <li><Link to="/">Inicio</Link></li>
+                        <li className="is-active"><Link to="game">Preguntas</Link></li>
                     </ul>
                 </nav>
                 {loading ? (
