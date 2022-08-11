@@ -1,6 +1,6 @@
 import Button from "../../components/Button";
 import { useNavigate } from 'react-router-dom';
-import background from '../../background.png';
+import background from '../../assets/background.png';
 
 function Home() {
     const navigate = useNavigate();
