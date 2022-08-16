@@ -4,23 +4,16 @@ import QuestionCard from "../../components/QuestionCard";
 import bien from "../../assets/bien.png"
 import mal from "../../assets/mal.png"
 import medio from "../../assets/medio.png"
+import useFetch from "../../components/commons/useFetch";
 
 const API_URL = "https://62bb6e36573ca8f83298fbef.mockapi.io/metcampweb22/v1/questions/harry-potter";
 
 function Game() {
-    const [questions, setQuestions] = useState([]);
-    const [loading, setLoading] = useState(true);
+    const { questions, loading, error} = useFetch(API_URL)
+    
     const [showCorrectAnswers, setShowCorrectAnswers] = useState(false)
     const [selectedAnswers, setSelectedAnswers] = useState([])
     const [result, setResult] = useState({})
-
-    useEffect(() => {
-        fetch(API_URL)
-            .then(response => response.json())
-            .then(data => setQuestions(data))
-            .catch((error) => console.log(error))
-            .finally(() => setLoading(false));
-    }, []);
 
     function calculateAndShowResult() {
         const rightAnswers = selectedAnswers.filter((item) => item.answerValue === true)
