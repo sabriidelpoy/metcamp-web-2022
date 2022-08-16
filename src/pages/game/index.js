@@ -4,7 +4,7 @@ import QuestionCard from "../../components/QuestionCard";
 import bien from "../../assets/bien.png"
 import mal from "../../assets/mal.png"
 import medio from "../../assets/medio.png"
-import useFetch from "../../components/commons/useFetch";
+import useFetch from "../../hooks/useFetch";
 
 const API_URL = "https://62bb6e36573ca8f83298fbef.mockapi.io/metcampweb22/v1/questions/harry-potter";
 
