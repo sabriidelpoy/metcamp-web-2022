@@ -1,25 +1,20 @@
-import React, {useState, useEffect} from "react";
+import { useState, useEffect } from "react";
 
-
-const useFetch = (API_URL) =>{
+const useFetch = (API_URL) => {
     const [loading, setLoading] = useState(true);
     const [error, setError] =useState(null);
-    const [questions, setQuestions] = useState([]);
-
-
+    const [data, setData] = useState([]);
 
     useEffect(() => {
         setLoading(true);
         fetch(API_URL)
             .then(response => response.json())
-            .then(data => setQuestions(data))
+            .then(data => setData(data))
             .catch((error) => setError(error))
             .finally(() => setLoading(false));
     }, [API_URL]);
 
-
-    return {questions, loading, error}
-    
+    return { data, loading, error }  
 }
 
 export default useFetch;

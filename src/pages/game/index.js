@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import { Link } from 'react-router-dom';
 import QuestionCard from "../../components/QuestionCard";
 import bien from "../../assets/bien.png"
@@ -9,7 +9,7 @@ import useFetch from "../../hooks/useFetch";
 const API_URL = "https://62bb6e36573ca8f83298fbef.mockapi.io/metcampweb22/v1/questions/harry-potter";
 
 function Game() {
-    const { questions, loading, error} = useFetch(API_URL)
+    const { data: questions, loading } = useFetch(API_URL)
     
     const [showCorrectAnswers, setShowCorrectAnswers] = useState(false)
     const [selectedAnswers, setSelectedAnswers] = useState([])
