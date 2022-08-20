@@ -1,0 +1,14 @@
+
+.switch{
+    display: flex;
+    justify-content: center;
+  }
+
+  #dark{
+    background-color: #000;
+  }
+  
+  #light{
+    background-color: #FFFF;
+  }
+  
