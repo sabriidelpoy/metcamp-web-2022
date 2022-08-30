@@ -1,0 +1,11 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Button Component should match snapshot 1`] = `
+<div>
+  <button
+    class="button is-primary is-outlined is-large"
+  >
+    MetCamp Quiz test
+  </button>
+</div>
+`;
