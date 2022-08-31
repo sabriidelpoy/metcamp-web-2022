@@ -1,4 +1,5 @@
 import { render, screen, fireEvent } from "@testing-library/react";
+import userEvent from "@testing-library/user-event";
 
 import Button from '../index';
 
@@ -17,12 +18,12 @@ describe('Button Component', () => {
     test('should ejecute onClick function', () => {
         // 1. Inicialización
         render(<Button {...props} />);
-        // 2. Estímulo
-        const buttonHome = screen.getByRole('button', {
-            name: /metcamp quiz test/i
-          })
+        const buttonHome = screen.getByRole('button', { name: /metcamp quiz test/i })
         // const buttonHome = screen.getByText('MetCamp Quiz test');
-        fireEvent.click(buttonHome);
+
+        // 2. Estímulo
+        userEvent.click(buttonHome);
+
         // 3. Observar el comportamiento esperado
         expect(props.onClick).toHaveBeenCalled();
     });
